@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <div v-if="count > 0">
+            判断1：count > 0，count值：{{count}}
+        </div>
+        <div v-else-if="count < 0 && count > -5">
+            判断2：count值：{{count}}
+        </div>
+        <div v-else>
+            判断3：count值：{{count}}
+        </div>
+        <div v-show="count == -1">
+            show值：{{count}}
+        </div> -->
+        <div v-for="item in list">
+            <!-- <div v-if="item.age > 29">
+                {{item.name}}
+            </div>
+            <div v-else>
+                {{item.age}}
+            </div> -->
+            <!-- <div v-show="item.age == 30" style="color: tomato;">
+                {{item.name}}
+            </div> -->
+            <!-- <div v-show="item.age == 30" v-bind:style="{'color': 'tomato'}">
+                {{item.name}}
+            </div> -->
+            <!-- <div v-show="item.age == 30" 
+                :style="styleMsg"vue
+                :class="{'active':true}">
+                {{item.name}}
+            </div> -->
+            <!-- <div v-show="item.age == 30" 
+                :style="styleMsg"
+                :class="['active','add', 'more']">
+                {{item.name}}
+            </div> -->
+            <!-- <div v-show="item.age == 30" 
+                :style="styleMsg"
+                :class="['active','add', 'more',{'another': true}]">
+                {{item.name}}
+            </div> -->
+            <div v-show="item.age > 29" 
+                :style="styleMsg"
+                :class="['active','add', 'more',{'another': item.age < 30 }]">
+                {{item.name}}
+            </div>
+        </div>
+        {{msg}}
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello Vue!!',
+                styleMsg:{
+                    color: 'tomato',
+                    // 'text-shadow':'0 0 5px green'
+                    textShadow:'0 0 5px green'
+                    },
+                // count:0,
+                // list:[1,2,3,4,5],    
+                list:[{
+                    name:'libin',
+                    age:29
+                },{
+                    name:'wanghong',
+                    age:30
+                }]        
+            }
+        })
+    </script>
+</body>
+</html>
