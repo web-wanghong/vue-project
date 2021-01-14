@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            color: teal;
+        }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="bg">
+            Hello World!!!
+            {{msg}}
+        </div>
+        {{(count+1)*10}}
+        <div class="bg" v-html="template">
+        </div>
+        <a v-bind:href="url">百度</a>
+        <a :href="url1">慕课</a>
+        <button type="button" v-on:click="submit">计数器</button>
+        <button type="button" @click="submit">计数器copy</button>
+    </div>
+    
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'Hello vue!!',
+                count:0,
+                url:'http://www.baidu.com',
+                url1:'http://imooc.com',
+                template:'<div>Hello template!!</div>',
+                
+            },
+            methods: {
+                submit:function(){
+                    this.count ++
+                }
+            },
+        })
+    </script>
+</body>
+</html>
